@@ -1,0 +1,232 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f0f0; color: #222; }
+
+.header { background: #800000; color: white; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10; }
+.header h1 { font-size: 22px; letter-spacing: 1px; }
+.header nav { display: flex; gap: 12px; }
+.header nav a { color: white; text-decoration: none; padding: 8px 14px; border-radius: 20px; font-weight: 600; font-size: 14px; }
+.header nav a.active, .header nav a:hover { background: white; color: #800000; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
+.page-title { font-size: 28px; margin-bottom: 6px; color: #800000; }
+.page-subtitle { color: #666; margin-bottom: 20px; }
+
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+.stat-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-left: 5px solid #800000; }
+.stat-card h3 { font-size: 13px; color: #888; text-transform: uppercase; }
+.stat-card p { font-size: 32px; font-weight: 800; color: #800000; margin-top: 6px; }
+
+.search-bar { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.search-bar input, .search-bar select { padding: 11px 14px; border: 1px solid #ddd; border-radius: 10px; font-size: 15px; flex: 1; min-width: 180px; background: white; }
+.search-bar input:focus { outline: 2px solid #800000; }
+
+.books-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.book-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+.book-card-cover { height: 160px; background: #800000; color: white; display: flex; align-items: center; justify-content: center; font-size: 52px; font-weight: 800; }
+.book-card-body { padding: 16px; }
+.book-card-body h3 { font-size: 18px; margin-bottom: 4px; }
+.book-card-body .author { color: #666; font-size: 14px; margin-bottom: 10px; }
+.badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+.badge-available { background: #e6f4ea; color: #137333; }
+.badge-borrowed { background: #fef7e0; color: #b06000; }
+.badge-overdue { background: #fce8e6; color: #a50e0e; }
+.card-actions { display: flex; gap: 8px; margin-top: 14px; }
+
+.btn { padding: 10px 16px; border: none; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 14px; }
+.btn-primary { background: #800000; color: white; }
+.btn-secondary { background: #eee; color: #333; }
+.btn-danger { background: #c5221f; color: white; }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.form { background: white; padding: 24px; border-radius: 12px; max-width: 600px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-weight: 700; margin-bottom: 6px; font-size: 14px; }
+.form-group input, .form-group select { width: 100%; padding: 11px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; }
+.error { color: #c5221f; font-size: 13px; margin-top: 4px; }
+.success { background: #e6f4ea; color: #137333; padding: 12px; border-radius: 8px; margin-bottom: 16px; font-weight: 600; }
+.loading { text-align: center; padding: 60px; font-size: 20px; color: #800000; font-weight: 700; }
+.empty { text-align: center; padding: 50px; color: #888; background: white; border-radius: 12px; }
+
+@media (max-width: 700px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } .header { flex-direction: column; gap: 12px; } }
+
+/* --- FIXED NAVBAR - LOGIN SA RIGHT --- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: #800000;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar .logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: auto;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.nav-links a:hover {
+  background: white;
+  color: #800000;
+}
+
+/* Login button */
+.nav-links .btn-primary {
+  background: white !important;
+  color: #800000 !important;
+  padding: 9px 22px !important;
+  border-radius: 999px !important;
+  margin-left: 16px !important;
+}
+
+/* --- DASHBOARD BOXES - LIGHT + MAY SPACE --- */
+.stats-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 22px !important;
+  margin-bottom: 24px !important;
+}
+
+.stat-card {
+  background: white !important;
+  border: 1px solid #eee !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+}
+
+/* --- ADD BOOK FORM - LIGHT BOX --- */
+form {
+  background: white !important;
+  border: 1px solid #eee !important;
+  border-radius: 16px !important;
+  padding: 28px !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+  max-width: 700px !important;
+  margin: 0 auto !important;
+}
+
+form input, form select, form textarea {
+  width: 100% !important;
+  padding: 12px 14px !important;
+  border: 1px solid #ddd !important;
+  border-radius: 10px !important;
+  margin-top: 6px !important;
+  margin-bottom: 16px !important;
+  font-size: 15px !important;
+  background: #fafafa !important;
+}
+
+form label {
+  font-weight: 600 !important;
+  color: #333 !important;
+  font-size: 14px !important;
+}
+
+
+.container {
+  max-width: 1200px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
+}
+
+.stats-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+/* --- RECENT BOOKS - LIGHT BOX --- */
+.recent-books, .recent, .books-list, .dashboard-section {
+  background: white !important;
+  border: 1px solid #eee !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+  margin-top: 24px !important;
+}
+
+.recent-books h2, .recent-books h3 {
+  margin-bottom: 16px !important;
+  color: #333 !important;
+}
+
+/* Yung table sa loob ng Recent Books */
+.recent-books table, table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+}
+
+.recent-books th {
+  text-align: left !important;
+  color: #888 !important;
+  font-size: 13px !important;
+  padding: 12px 8px !important;
+  border-bottom: 1px solid #eee !important;
+}
+
+.recent-books td {
+  padding: 14px 8px !important;
+  border-bottom: 1px solid #f5f5f5 !important;
+  font-size: 14px !important;
+}
+
+/* Yung BORROWED badge */
+.recent-books td:last-child, .badge {
+  font-weight: 600 !important;
+}
+
+
+.books-grid, .book-list, .book-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 20px !important;
+  margin-top: 20px !important;
+}
+
+.book-card, .book-item {
+  background: white !important;
+  border: 1px solid #eee !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+  padding: 0 !important;
+}
+
+/* --- RECENT BOOKS SA DASHBOARD - 3 CARDS PER ROW --- */
+.books-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 20px !important;
+  margin-top: 16px !important;
+}
+
+
+.books-grid > div, .books-grid > a {
+  background: white !important;
+  border: 1px solid #eee !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+}
