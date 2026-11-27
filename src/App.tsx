@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route, Link, useNavigate } from "react-router-dom";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
@@ -39,6 +40,8 @@ function Navbar() {
         ) : (
           <Link to="/login" className="btn btn-small btn-primary">Login</Link>
         )}
+
+        <footer/>
       </div>
     </nav>
   );
