@@ -232,8 +232,8 @@ form label {
 }
 
 
-.header nav a.active {
+.nav-active {
   border-bottom: 4px solid #FFD700 !important;
-  padding-bottom: 4px !important;
-  font-weight: bold !important;
+  padding-bottom: 5px !important;
+  color: white !important;
 }
