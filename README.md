@@ -19,3 +19,7 @@ Live Demo: https://lmi-final.vercel.app
 
 ## How to Run Locally
 1. Clone the repo
+
+- Wendel Fresnido - Project Leader
+- Dominic Gervacio, Jemar Guelas- Technical Writer
+- Angela Azul, Carla Gavanzo - Frontend Developers
