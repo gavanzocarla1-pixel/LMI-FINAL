@@ -5,7 +5,7 @@ export default function Header() {
     <header className="header">
       <h1>📚 LMI - Library Management</h1>
       <nav>
-        <NavLink to="/" end>Home</NavLink>
+        <NavLink to="/" end>Dashboard</NavLink>
         <NavLink to="/books">Books</NavLink>
         <NavLink to="/add">Add Book</NavLink>
         <NavLink to="/borrowed">Borrowed</NavLink>
