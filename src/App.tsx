@@ -57,7 +57,7 @@ export default function App() {
         <Route path="/borrowed" element={<Borrowed />} />
         <Route path="/login" element={<Login />} />
       </Routes>
-      <footer/>
+      <Footer/>
     </BrowserRouter>
   );
 }
