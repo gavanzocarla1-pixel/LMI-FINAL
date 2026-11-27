@@ -41,7 +41,6 @@ function Navbar() {
           <Link to="/login" className="btn btn-small btn-primary">Login</Link>
         )}
 
-        <footer/>
       </div>
     </nav>
   );
@@ -58,6 +57,7 @@ export default function App() {
         <Route path="/borrowed" element={<Borrowed />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+      <footer/>
     </BrowserRouter>
   );
 }
