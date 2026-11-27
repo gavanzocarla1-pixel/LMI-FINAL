@@ -61,12 +61,14 @@ export default function BookForm({ initialBook, onSubmit, isSaving }: Props) {
       <div className="form-group">
         <label>Category</label>
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option>Fiction</option>
-          <option>Non-Fiction</option>
-          <option>Science</option>
-          <option>History</option>
-          <option>Math</option>
+          <option>Programming</option>
+          <option>Web Development</option>
+          <option>Database</option>
+          <option>Networking</option>
+          <option>Computer Science</option>
           <option>Biography</option>
+          <option>History</option>
+
         </select>
       </div>
 
