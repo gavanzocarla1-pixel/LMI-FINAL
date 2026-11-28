@@ -27,42 +27,48 @@ function Navbar() {
 
   const initial = user?.email ? user.email.charAt(0).toUpperCase() : "";
 
-  return (
+      return (
     <nav className="navbar">
-      <Link to="/" className="logo">📚 LMI </Link>
+      <Link to="/" className="logo">📚 LMI</Link>
+
+      {/* ROW 1 RIGHT - G at Logout, pantay kay LMI */}
+      <div className="nav-user">
+        {user ? (
+          <>
+            <span style={{
+              width: "32px",
+              height: "32px",
+              borderRadius: "50%",
+              background: "#dc2626",
+              color: "#fff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontWeight: "bold",
+              fontSize: "16px",
+            }}>
+              {initial}
+            </span>
+            <button className="btn btn-small" onClick={handleLogout}>Logout</button>
+          </>
+        ) : location.pathname !== "/login" && (
+          <Link to="/login" className="btn btn-small btn-primary">Login</Link>
+        )}
+      </div>
+
+      {/* ROW 2 - Dashboard | Books | Borrowed | Add Book */}
       <div className="nav-links">
         {user && (
-  <>
-    <Link to="/">Dashboard</Link>
-    <Link to="/books">Books</Link>
-    <Link to="/borrowed">Borrowed</Link>
-  </>
-)}
+          <>
+            <Link to="/">Dashboard</Link>
+            <Link to="/books">Books</Link>
+            <Link to="/borrowed">Borrowed</Link>
+          </>
+        )}
         {user && <Link to="/add">Add Book</Link>}
-        {user ? (
-  <>
-    <span style={{
-      width: "32px",
-      height: "32px",
-      borderRadius: "50%",
-      background: "#dc2626",
-      color: "#fff",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      fontWeight: "bold",
-      fontSize: "16px",
-    }}
-    >
-      {initial}
-    </span>
-    <button className="btn btn-small" onClick={handleLogout}>Logout</button>
-  </>
-) : location.pathname !== "/login" && (
-  <Link to="/login" className="btn btn-small btn-primary">Login</Link>
-)}
       </div>
     </nav>
+  
   );
 }
 
