@@ -325,3 +325,33 @@ form label {
     text-align: center !important;
   }
 }
+
+/* --- NAVBAR --- */
+@media (max-width: 768px) {
+  nav, .navbar {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    overflow: visible !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 10px 8px !important;
+    gap: 6px !important;
+  }
+
+  nav a, .navbar a,
+  nav button, .navbar button {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    font-size: 13px !important;
+    padding: 7px 12px !important;
+  }
+
+  /*  Log in / Log out */
+  nav a:last-child, .navbar a:last-child,
+  nav button:last-child, .navbar button:last-child {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
