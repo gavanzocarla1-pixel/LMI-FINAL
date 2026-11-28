@@ -81,16 +81,21 @@ export default function App() {
   if (loading) return <div style={{padding: 40, textAlign: "center"}}>Loading...</div>;
 
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
+  <BrowserRouter>
+    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+  <Navbar />
+  <main style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+    <Routes>
+    
         <Route path="/login" element={user ? <Navigate to="/" replace /> : <Login />} />
 <Route path="/" element={user ? <Dashboard /> : <Navigate to="/login" replace />} />
 <Route path="/books" element={user ? <Books /> : <Navigate to="/login" replace />} />
 <Route path="/add" element={user ? <AddBook /> : <Navigate to="/login" replace />} />
 <Route path="/borrowed" element={user ? <Borrowed /> : <Navigate to="/login" replace />} />
       </Routes>
+      </main>
       <Footer/>
+      </div>
     </BrowserRouter>
   );
 }
