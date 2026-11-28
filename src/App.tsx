@@ -1,5 +1,5 @@
 import Footer from "./components/Footer";
-import { BrowserRouter, Routes, Route, Link, Navigate, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, Navigate, useNavigate, useLocation } from "react-router-dom";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { auth } from "./firebase";
@@ -13,6 +13,7 @@ import "./App.css";
 function Navbar() {
   const navigate = useNavigate();
   const [user, setUser] = useState<any>(null);
+  const location = useLocation();
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (u) => setUser(u));
@@ -28,7 +29,7 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <Link to="/" className="logo">📚 LMI Library</Link>
+      <Link to="/" className="logo">📚 LMI </Link>
       <div className="nav-links">
         {user && (
   <>
@@ -39,29 +40,27 @@ function Navbar() {
 )}
         {user && <Link to="/add">Add Book</Link>}
         {user ? (
-          <>
-            <span
-              title={user.email}
-              style={{
-                width: "32px",
-                height: "32px",
-                background: "white",
-                color: "#9B1B30",
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontWeight: "bold",
-                fontSize: "16px",
-              }}
-            >
-              {initial}
-            </span>
-            <button className="btn btn-small" onClick={handleLogout}>Logout</button>
-          </>
-        ) : (
-          <Link to="/login" className="btn btn-small btn-primary">Login</Link>
-        )}
+  <>
+    <span style={{
+      width: "32px",
+      height: "32px",
+      borderRadius: "50%",
+      background: "#dc2626",
+      color: "#fff",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      fontWeight: "bold",
+      fontSize: "16px",
+    }}
+    >
+      {initial}
+    </span>
+    <button className="btn btn-small" onClick={handleLogout}>Logout</button>
+  </>
+) : location.pathname !== "/login" && (
+  <Link to="/login" className="btn btn-small btn-primary">Login</Link>
+)}
       </div>
     </nav>
   );
