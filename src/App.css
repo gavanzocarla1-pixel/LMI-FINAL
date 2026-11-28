@@ -355,3 +355,47 @@ form label {
     opacity: 1 !important;
   }
 }
+
+/* --- STATS BOX  --- */
+@media (max-width: 768px) {
+  .stats, .stat-grid, .dashboard-stats {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .stat-card, .stat, .stats > div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 14px 6px !important;
+    overflow: hidden !important;
+  }
+
+  /* Number - 1, 0 */
+  .stat-card h2, .stat-card h3, .stat-card .number,
+  .stat h2, .stat h3 {
+    font-size: 28px !important;
+    line-height: 1.1 !important;
+    margin: 0 0 4px 0 !important;
+  }
+
+  /* Label - TOTAL BOOKS, AVAILABLE */
+  .stat-card p, .stat-card span, .stat-card small,
+  .stat p, .stat span {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.5px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+}
