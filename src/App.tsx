@@ -24,6 +24,8 @@ function Navbar() {
     navigate("/login");
   };
 
+  const initial = user?.email ? user.email.charAt(0).toUpperCase() : "";
+
   return (
     <nav className="navbar">
       <Link to="/" className="logo">📚 LMI Library</Link>
@@ -31,16 +33,49 @@ function Navbar() {
         <Link to="/">Dashboard</Link>
         <Link to="/books">Books</Link>
         <Link to="/borrowed">Borrowed</Link>
-        <Link to="/add">Add Book</Link>
+        {user && <Link to="/add">Add Book</Link>}
         {user ? (
           <>
-            <span style={{ fontSize: "13px", color: "#666" }}>{user.email}</span>
+            <span
+              title={user.email}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "6px",
+                maxWidth: "170px",
+                fontSize: "13px",
+                color: "#fff",
+                background: "rgba(255,255,255,0.15)",
+                padding: "5px 10px",
+                borderRadius: "20px",
+                overflow: "hidden",
+                whiteSpace: "nowrap",
+                textOverflow: "ellipsis",
+              }}
+            >
+              <span
+                style={{
+                  width: "22px",
+                  height: "22px",
+                  background: "white",
+                  color: "#9B1B30",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontWeight: "bold",
+                  flexShrink: 0,
+                }}
+              >
+                {initial}
+              </span>
+              <span style={{ overflow: "hidden", textOverflow: "ellipsis" }}>{user.email}</span>
+            </span>
             <button className="btn btn-small" onClick={handleLogout}>Logout</button>
           </>
         ) : (
           <Link to="/login" className="btn btn-small btn-primary">Login</Link>
         )}
-
       </div>
     </nav>
   );
