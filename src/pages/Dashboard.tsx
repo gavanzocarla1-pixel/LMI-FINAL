@@ -33,7 +33,7 @@ export default function Dashboard() {
 
   return (
     <div className="container">
-      <h2 className="page-title">Dashboard</h2>
+      <h2 className="page-title">Library Overview</h2>
       <p className="page-subtitle">Welcome back! Here's your library at a glance.</p>
 
       <div className="stats-grid">

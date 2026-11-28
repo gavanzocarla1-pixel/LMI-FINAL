@@ -3,13 +3,13 @@ import { NavLink } from "react-router-dom";
 export default function Header() {
   return (
     <header className="header">
-      <h1>📚 LMI - Library Management</h1>
+      <div className="logo">LMI Library</div>
       <nav>
-        <NavLink to="/" end>Dashboard</NavLink>
-        <NavLink to="/books">Books</NavLink>
-        <NavLink to="/add">Add Book</NavLink>
-        <NavLink to="/borrowed">Borrowed</NavLink>
-        <NavLink to="/login">Login</NavLink>
+        <NavLink to="/" end className={({ isActive }) => isActive ? "nav-active" : ""}>Dashboard</NavLink>
+        <NavLink to="/books" className={({ isActive }) => isActive ? "nav-active" : ""}>Books</NavLink>
+        <NavLink to="/borrowed" className={({ isActive }) => isActive ? "nav-active" : ""}>Borrowed</NavLink>
+        <NavLink to="/add" className={({ isActive }) => isActive ? "nav-active" : ""}>Add Book</NavLink>
+        <NavLink to="/login" className={({ isActive }) => isActive ? "nav-active" : ""}>Login</NavLink>
       </nav>
     </header>
   );

@@ -1,16 +1,26 @@
-# React + TypeScript + Vite
+# LMI - Library Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A Library Management System built with React + TypeScript + Vite + Firebase.
 
-Currently, two official plugins are available:
+Live Demo: https://lmi-final.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- User Login / Authentication
+- Dashboard with Statistics
+- Add, Edit, Delete, View Books (CRUD)
+- Search and Filter Books
+- Borrowed Books Management
 
-## React Compiler
+## Tech Stack
+- React + TypeScript + Vite
+- Firebase Firestore
+- React Router
+- Tailwind CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## How to Run Locally
+1. Clone the repo
 
+ angelaazul897-a11y-patch-1
 ## Expanding the Oxlint configuration
 
 If you are developing a production application, we recommend enabling type-aware lint rules by installing `tsrs` and editing `.oxlintrc.json`:
@@ -30,4 +40,9 @@ If you are developing a production application, we recommend enabling type-aware
 ```
 
 See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
-Angela Azul ✅- Frontend Developer
+
+## Group Contributions
+- Wendel Fresnido - Project Leader
+- Dominic Gervacio, Jemar Guelas- Technical Writer
+- Angela Azul ✅, Carla Gavanzo - Frontend Developers
+

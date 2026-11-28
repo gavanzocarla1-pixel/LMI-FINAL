@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+.header nav a.active {
+  border-bottom: 4px solid #FFD700 !important;
+  padding-bottom: 5px !important;
+}
