@@ -247,3 +247,31 @@ form label {
   font-size: 14px;
   text-decoration: underline;
 }
+
+/* --- MOBILE FIX --- */
+@media (max-width: 768px) {
+  /* Navbar - wag pilitin sa isang row */
+  .navbar, nav {
+    flex-wrap: wrap !important;
+    height: auto !important;
+    padding: 10px !important;
+    gap: 10px !important;
+  }
+
+  /* Stats - 2 per row lang, hindi 4 */
+  .stats, .stat-grid, .dashboard-stats {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* Books - 1 per row lang sa CP */
+  .books-grid, .book-list, .recent-books {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Book card - wag putulin yung buttons */
+  .book-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
