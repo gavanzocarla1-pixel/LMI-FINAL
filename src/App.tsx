@@ -1,5 +1,5 @@
 import Footer from "./components/Footer";
-import { BrowserRouter, Routes, Route, Link, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, Navigate, useNavigate } from "react-router-dom";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { auth } from "./firebase";
@@ -66,16 +66,30 @@ function Navbar() {
     </nav>
   );
 }
+
 export default function App() {
+  const [user, setUser] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (u) => {
+      setUser(u);
+      setLoading(false);
+    });
+    return () => unsub();
+  }, []);
+
+  if (loading) return <div style={{padding: 40, textAlign: "center"}}>Loading...</div>;
+
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/books" element={<Books />} />
-        <Route path="/add" element={<AddBook />} />
-        <Route path="/borrowed" element={<Borrowed />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={user ? <Navigate to="/" replace /> : <Login />} />
+<Route path="/" element={user ? <Dashboard /> : <Navigate to="/login" replace />} />
+<Route path="/books" element={user ? <Books /> : <Navigate to="/login" replace />} />
+<Route path="/add" element={user ? <AddBook /> : <Navigate to="/login" replace />} />
+<Route path="/borrowed" element={user ? <Borrowed /> : <Navigate to="/login" replace />} />
       </Routes>
       <Footer/>
     </BrowserRouter>
