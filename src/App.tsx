@@ -36,42 +36,22 @@ function Navbar() {
         {user && <Link to="/add">Add Book</Link>}
         {user ? (
           <>
-           <span
-  title={user.email}
-  style={{
-    width: "32px",
-    height: "32px",
-    background: "white",
-    color: "#9B1B30",
-    borderRadius: "50%",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontWeight: "bold",
-    fontSize: "16px",
-    flexShrink: 0,
-    cursor: "pointer",
-  }}
->
-  {initial}
-</span>
-              <span
-                style={{
-                  width: "22px",
-                  height: "22px",
-                  background: "white",
-                  color: "#9B1B30",
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontWeight: "bold",
-                  flexShrink: 0,
-                }}
-              >
-                {initial}
-              </span>
-              <span style={{ overflow: "hidden", textOverflow: "ellipsis" }}>{user.email}</span>
+            <span
+              title={user.email}
+              style={{
+                width: "32px",
+                height: "32px",
+                background: "white",
+                color: "#9B1B30",
+                borderRadius: "50%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontWeight: "bold",
+                fontSize: "16px",
+              }}
+            >
+              {initial}
             </span>
             <button className="btn btn-small" onClick={handleLogout}>Logout</button>
           </>
@@ -82,7 +62,6 @@ function Navbar() {
     </nav>
   );
 }
-
 export default function App() {
   return (
     <BrowserRouter>
