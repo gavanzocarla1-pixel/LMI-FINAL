@@ -1,10 +1,22 @@
 import { useState } from "react";
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
+  const handleForgot = async () => {
+  if (!email) {
+    alert("Ilagay mo muna yung email mo sa taas.");
+    return;
+  }
+  try {
+    await sendPasswordResetEmail(auth, email);
+    alert("Na-send na! Check mo Gmail mo: " + email);
+  } catch (err: any) {
+    alert(err.message);
+  }
+};
   const [password, setPassword] = useState("");
   const [isRegister, setIsRegister] = useState(false);
   const [error, setError] = useState("");
@@ -50,6 +62,10 @@ export default function Login() {
         <button type="submit" className="btn btn-primary" disabled={loading} style={{ width: "100%", padding: "13px" }}>
           {loading ? "Please wait..." : isRegister ? "Register" : "Login"}
         </button>
+        
+        <button type="button" onClick={handleForgot} style={{ background: "none", border: "none", color: "#9B1B30", cursor: "pointer", marginTop: "10px", fontSize: "14px", textDecoration: "underline" }}>
+  Forgot Password?
+</button>
 
         <p style={{ textAlign: "center", marginTop: "16px", fontSize: "14px" }}>
           {isRegister ? "Already have an account? " : "No account yet? "}
@@ -61,3 +77,4 @@ export default function Login() {
     </div>
   );
 }
+
