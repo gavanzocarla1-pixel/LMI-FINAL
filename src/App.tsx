@@ -30,9 +30,13 @@ function Navbar() {
     <nav className="navbar">
       <Link to="/" className="logo">📚 LMI Library</Link>
       <div className="nav-links">
-        <Link to="/">Dashboard</Link>
-        <Link to="/books">Books</Link>
-        <Link to="/borrowed">Borrowed</Link>
+        {user && (
+  <>
+    <Link to="/">Dashboard</Link>
+    <Link to="/books">Books</Link>
+    <Link to="/borrowed">Borrowed</Link>
+  </>
+)}
         {user && <Link to="/add">Add Book</Link>}
         {user ? (
           <>
