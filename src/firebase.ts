@@ -3,7 +3,7 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD_fbXf6ewBPYK0PysLno44c9yE0cksS0M",
+  apiKey: "AIzaSyADpo1R0D4poiJW0ISoqSMuYV5sGUcYGoE",
   authDomain: "lmi-library.firebaseapp.com",
   projectId: "lmi-library",
   storageBucket: "lmi-library.firebasestorage.app",
