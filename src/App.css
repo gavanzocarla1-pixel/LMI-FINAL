@@ -237,3 +237,13 @@ form label {
   padding-bottom: 5px !important;
   color: white !important;
 }
+
+.forgot-btn {
+  background: none;
+  border: none;
+  color: #9B1B30;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+  text-decoration: underline;
+}

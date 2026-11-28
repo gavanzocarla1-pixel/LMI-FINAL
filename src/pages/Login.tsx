@@ -63,7 +63,7 @@ export default function Login() {
           {loading ? "Please wait..." : isRegister ? "Register" : "Login"}
         </button>
         
-        <button type="button" onClick={handleForgot} style={{ background: "none", border: "none", color: "#9B1B30", cursor: "pointer", marginTop: "10px", fontSize: "14px", textDecoration: "underline" }}>
+        <button type="button" onClick={handleForgot} className="forgot-btn">
   Forgot Password?
 </button>
 
