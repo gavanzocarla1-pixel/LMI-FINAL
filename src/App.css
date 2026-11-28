@@ -326,53 +326,66 @@ form label {
   }
 }
 
-/* --- NAVBAR - EXACT ROW: Dashboard | Books | Borrowed | Add Book | G | Log in --- */
-@media (max-width: 768px) {
-  nav, .navbar, header {
-    display: flex !important;
-    flex-direction: column !important;
-    width: 100% !important;
-    padding: 6px 4px !important;
-    gap: 4px !important;
-  }
+/* --- NAVBAR - DALAWANG ROW, PAREHO SA DESKTOP AT MOBILE --- */
+nav, .navbar, header {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  padding: 10px 12px 6px 12px !important;
+  gap: 0 !important;
+}
 
-  /* LMI - sa taas lang, hiwalay */
-  nav > a:first-child, .navbar > a:first-child,
-  nav > div:first-child {
-    width: 100% !important;
-    text-align: center !important;
-    justify-content: center !important;
-    font-size: 16px !important;
-    padding: 2px 0 !important;
-  }
+/* ROW 1 - LMI */
+nav > a:first-child, .navbar > a:first-child,
+nav > div:first-child {
+  order: 1 !important;
+  width: auto !important;
+  font-size: 17px !important;
+  padding: 0 !important;
+}
 
-  /* Yung row na gusto mo */
-  nav > div:last-child, .navbar > div:last-child,
-  nav ul, .navbar ul, nav > div:nth-child(2) {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    width: 100% !important;
-    gap: 2px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
+/* ROW 1 - G at Logout - kanan, pantay kay LMI */
+nav > div:nth-child(2), .navbar > div:nth-child(2) {
+  order: 2 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 8px !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
-  nav a, .navbar a, nav button, .navbar button, nav li {
-    font-size: 11px !important;
-    padding: 6px 3px !important;
-    white-space: nowrap !important;
-    flex-shrink: 1 !important;
-    border: none !important;
-  }
+/* ROW 2 - Dashboard | Books | Borrowed | Add Book */
+nav > div:nth-child(3), .navbar > div:nth-child(3),
+nav ul, .navbar ul {
+  order: 3 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  margin-top: 8px !important;
+  padding-top: 8px !important;
+  border-top: 1px solid rgba(255,255,255,0.15) !important;
+  gap: 4px !important;
+}
 
-  /* G */
-  nav .avatar, .navbar .avatar {
-    width: 24px !important;
-    height: 24px !important;
-    font-size: 11px !important;
-    flex-shrink: 0 !important;
-  }
+nav a, .navbar a, nav button, .navbar button {
+  font-size: 13px !important;
+  padding: 6px 6px !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+nav .avatar, .navbar .avatar {
+  width: 28px !important;
+  height: 28px !important;
+  font-size: 13px !important;
 }
