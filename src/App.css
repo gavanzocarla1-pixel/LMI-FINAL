@@ -326,76 +326,63 @@ form label {
   }
 }
 
-/* --- NAVBAR --- */
+/* --- NAVBAR - DAPAT KITA LAHAT: Dashboard, Books, Borrowed, Add Book, G, Log in --- */
 @media (max-width: 768px) {
-  nav, .navbar {
+  nav, .navbar, header {
     display: flex !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
-    overflow: visible !important;
+    align-items: center !important;
     width: 100% !important;
+    max-width: 100% !important;
     height: auto !important;
-    padding: 10px 8px !important;
+    padding: 10px 6px !important;
     gap: 6px !important;
+    overflow: visible !important;
   }
 
-  nav a, .navbar a,
-  nav button, .navbar button {
-    flex-shrink: 0 !important;
+  /* Yung lalagyan ng links - pilitin mag-wrap */
+  nav > div, .navbar > div, nav ul, .navbar ul {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 4px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Lahat ng link - paliitin para magkasya */
+  nav a, .navbar a, nav button, .navbar button, nav li {
+    font-size: 12px !important;
+    padding: 6px 8px !important;
+    margin: 0 !important;
     white-space: nowrap !important;
-    font-size: 13px !important;
-    padding: 7px 12px !important;
+    flex-shrink: 0 !important;
   }
 
-  /*  Log in / Log out */
+  /* Logo LMI - isahan sa taas, gitna */
+  nav a:first-child, .navbar a:first-child {
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    justify-content: center !important;
+  }
+
+  /* Yung G - paliitin konti para hindi sumikip */
+  nav .avatar, .navbar .avatar, nav img, .navbar img {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 14px !important;
+  }
+
+  /* Log in - laging kita, sa huli */
   nav a:last-child, .navbar a:last-child,
   nav button:last-child, .navbar button:last-child {
     display: inline-flex !important;
     visibility: visible !important;
     opacity: 1 !important;
-  }
-}
-
-/* --- STATS BOX  --- */
-@media (max-width: 768px) {
-  .stats, .stat-grid, .dashboard-stats {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 10px !important;
-    width: 100% !important;
-  }
-
-  .stat-card, .stat, .stats > div {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    padding: 14px 6px !important;
-    overflow: hidden !important;
-  }
-
-  /* Number - 1, 0 */
-  .stat-card h2, .stat-card h3, .stat-card .number,
-  .stat h2, .stat h3 {
-    font-size: 28px !important;
-    line-height: 1.1 !important;
-    margin: 0 0 4px 0 !important;
-  }
-
-  /* Label - TOTAL BOOKS, AVAILABLE */
-  .stat-card p, .stat-card span, .stat-card small,
-  .stat p, .stat span {
-    font-size: 11px !important;
-    line-height: 1.2 !important;
-    letter-spacing: 0.5px !important;
-    white-space: normal !important;
-    word-break: break-word !important;
-    overflow-wrap: break-word !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    text-align: center !important;
   }
 }
