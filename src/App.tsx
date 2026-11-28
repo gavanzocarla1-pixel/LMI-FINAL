@@ -36,23 +36,25 @@ function Navbar() {
         {user && <Link to="/add">Add Book</Link>}
         {user ? (
           <>
-            <span
-              title={user.email}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "6px",
-                maxWidth: "170px",
-                fontSize: "13px",
-                color: "#fff",
-                background: "rgba(255,255,255,0.15)",
-                padding: "5px 10px",
-                borderRadius: "20px",
-                overflow: "hidden",
-                whiteSpace: "nowrap",
-                textOverflow: "ellipsis",
-              }}
-            >
+           <span
+  title={user.email}
+  style={{
+    width: "32px",
+    height: "32px",
+    background: "white",
+    color: "#9B1B30",
+    borderRadius: "50%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontWeight: "bold",
+    fontSize: "16px",
+    flexShrink: 0,
+    cursor: "pointer",
+  }}
+>
+  {initial}
+</span>
               <span
                 style={{
                   width: "22px",
